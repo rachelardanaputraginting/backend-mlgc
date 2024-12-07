@@ -5,7 +5,7 @@ steps:
       [
         "build",
         "-t",
-        "asia-southeast1-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api",
+        "asia-southeast2-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api",
         ".",
       ]
 
@@ -14,7 +14,7 @@ steps:
     args:
       [
         "push",
-        "asia-southeast1-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api",
+        "asia-southeast2-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api",
       ]
 
   # Step 3: Deploy the image to Cloud Run
@@ -25,13 +25,13 @@ steps:
       - "deploy"
       - "submission-asclepius-api"
       - "--image"
-      - "asia-southeast1-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api"
+      - "asia-southeast2-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api"
       - "--platform"
       - "managed"
       - "--region"
-      - "asia-southeast1"
+      - "asia-southeast2"
       - "--allow-unauthenticated"
 options:
   logging: CLOUD_LOGGING_ONLY
 images:
-  - "asia-southeast1-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api"
+  - "asia-southeast2-docker.pkg.dev/submissionmlgc-rachel/submission-mlgc/submission-asclepius-api"
